@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Remind AI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --accent: #5963F2;
+      --accent-soft: #EBEDFF;
+      --bg: #FCFCFF;
+      --surface: #F5F7FC;
+      --border: #E6E8F0;
+      --text: #1A1C2B;
+      --muted: #737A8C;
+    }
+
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+    .hero-bg {
+      background: #080A1C;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(89,99,242,0.4) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 90% 50%, rgba(89,99,242,0.1) 0%, transparent 55%);
+    }
+
+    .nav-link { color: rgba(255,255,255,0.6); font-size: 15px; font-weight: 500; text-decoration: none; transition: color 0.15s; }
+    .nav-link:hover { color: white; }
+
+    .appstore-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: white; color: #1A1C2B; padding: 10px 18px;
+      border-radius: 12px; font-weight: 600; font-size: 14px; text-decoration: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+    }
+    .appstore-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+    .footer-link { font-size: 14px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.15s; }
+    .footer-link:hover { color: rgba(255,255,255,0.75); }
+
+    /* Legal prose */
+    .legal h2 {
+      font-size: 18px; font-weight: 700; color: var(--text);
+      margin-top: 48px; margin-bottom: 12px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .legal h3 {
+      font-size: 15px; font-weight: 600; color: var(--text);
+      margin-top: 24px; margin-bottom: 8px;
+    }
+    .legal p {
+      font-size: 15px; color: #4A5068; line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .legal ul {
+      margin-bottom: 14px; padding-left: 20px;
+    }
+    .legal ul li {
+      font-size: 15px; color: #4A5068; line-height: 1.75;
+      margin-bottom: 6px; list-style: disc;
+    }
+    .legal strong { color: var(--text); font-weight: 600; }
+    .legal a { color: var(--accent); text-decoration: none; }
+    .legal a:hover { text-decoration: underline; }
+
+    /* Data type cards */
+    .data-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .data-icon {
+      width: 40px; height: 40px; border-radius: 12px;
+      background: var(--accent-soft);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .data-card-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .data-card-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+    /* Highlight box */
+    .highlight-box {
+      background: #EDFBF3;
+      border: 1.5px solid #33B373;
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .highlight-box p { color: #1A4A35; margin-bottom: 0; font-size: 15px; line-height: 1.7; }
+    .highlight-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #1E8A57; margin-bottom: 8px; }
+
+    /* TOC */
+    .toc-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 0; border-bottom: 1px solid var(--border);
+      text-decoration: none; color: #4A5068; font-size: 14px;
+      transition: color 0.15s;
+    }
+    .toc-item:last-child { border-bottom: none; }
+    .toc-item:hover { color: var(--accent); }
+    .toc-num { font-size: 12px; font-weight: 700; color: var(--accent); min-width: 22px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="hero-bg sticky top-0 z-50" style="border-bottom:1px solid rgba(255,255,255,0.06);">
+  <div class="max-w-6xl mx-auto px-6 h-[62px] flex items-center justify-between">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <img src="brand_assets/Remind AI logo.png" alt="Remind AI" style="width:34px;height:34px;border-radius:9px;">
+      <span style="font-size:17px;font-weight:600;color:white;">Remind AI</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="index.html#features" class="nav-link">Features</a>
+      <a href="index.html#pricing" class="nav-link">Pricing</a>
+    </div>
+    <a href="#" class="appstore-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Download
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-bg" style="padding:64px 24px 72px;">
+  <div class="max-w-3xl mx-auto text-center">
+    <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;color:#9BA3FF;margin-bottom:14px;">Legal</p>
+    <h1 class="font-display text-white" style="font-size:clamp(36px,5vw,56px);letter-spacing:-0.03em;line-height:1.08;margin-bottom:16px;">Privacy Policy</h1>
+    <p style="font-size:15px;color:rgba(255,255,255,0.5);">Last updated: May 31, 2026</p>
+  </div>
+</section>
+<div style="height:60px;background:linear-gradient(to bottom,#080A1C,#FCFCFF);"></div>
+
+<!-- CONTENT -->
+<main class="max-w-3xl mx-auto px-6 pb-24">
+
+  <!-- Privacy-first callout -->
+  <div class="highlight-box">
+    <p class="highlight-title">✓ Privacy first</p>
+    <p>Remind AI is built around a simple principle: your personal data belongs to you. Your reminders, contacts, and private notes are stored in your own iCloud account. We do not have a backend database. We cannot read your notes. We do not sell your information to anyone.</p>
+  </div>
+
+  <!-- Table of contents -->
+  <div style="background:#F5F7FC;border:1px solid #E6E8F0;border-radius:20px;padding:24px 28px;margin:32px 0;">
+    <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.3px;color:#737A8C;margin-bottom:14px;">Contents</p>
+    <a href="#p1"  class="toc-item"><span class="toc-num">1</span> Who We Are</a>
+    <a href="#p2"  class="toc-item"><span class="toc-num">2</span> What Data We Collect</a>
+    <a href="#p3"  class="toc-item"><span class="toc-num">3</span> How We Use Your Data</a>
+    <a href="#p4"  class="toc-item"><span class="toc-num">4</span> iCloud and CloudKit Storage</a>
+    <a href="#p5"  class="toc-item"><span class="toc-num">5</span> AI Processing</a>
+    <a href="#p6"  class="toc-item"><span class="toc-num">6</span> Voice Input</a>
+    <a href="#p7"  class="toc-item"><span class="toc-num">7</span> Notifications</a>
+    <a href="#p8"  class="toc-item"><span class="toc-num">8</span> Third-Party Services</a>
+    <a href="#p9"  class="toc-item"><span class="toc-num">9</span> Data We Do Not Collect</a>
+    <a href="#p10" class="toc-item"><span class="toc-num">10</span> Data Retention and Deletion</a>
+    <a href="#p11" class="toc-item"><span class="toc-num">11</span> Children's Privacy</a>
+    <a href="#p12" class="toc-item"><span class="toc-num">12</span> Changes to This Policy</a>
+    <a href="#p13" class="toc-item"><span class="toc-num">13</span> Contact Us</a>
+  </div>
+
+  <div class="legal">
+
+    <!-- 1 -->
+    <h2 id="p1">1. Who We Are</h2>
+    <p>Remind AI is a personal productivity application for iOS. This Privacy Policy explains what information we handle when you use the app, how it is used, and your rights regarding that information. By using the Service, you agree to this policy.</p>
+
+    <!-- 2 -->
+    <h2 id="p2">2. What Data We Collect</h2>
+    <p>We collect the minimum amount of data necessary to operate the Service. Here is a plain-language breakdown:</p>
+
+    <div class="data-card">
+      <div class="data-icon">💬</div>
+      <div>
+        <div class="data-card-title">Chat input text</div>
+        <div class="data-card-desc">When you type or speak a reminder in the Chat tab, the text you submit is sent to our AI processing proxy (Cloudflare Worker) and then to Anthropic's API to be parsed into a structured reminder. This text is transmitted over an encrypted connection. It is not stored by us after processing.</div>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-icon">📊</div>
+      <div>
+        <div class="data-card-title">Anonymous usage metrics</div>
+        <div class="data-card-desc">We may collect basic, anonymized usage signals — such as how many AI parse requests were made per device — solely for rate limiting and abuse prevention. This data cannot be linked back to you personally.</div>
+      </div>
+    </div>
+
+    <div class="data-card">
+      <div class="data-icon">🛒</div>
+      <div>
+        <div class="data-card-title">Subscription status</div>
+        <div class="data-card-desc">The Apple App Store handles all billing. We receive a receipt confirmation indicating whether your subscription is active, which plan you are on, and when it renews. We do not receive your payment details, Apple ID, or name from Apple.</div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <h2 id="p3">3. How We Use Your Data</h2>
+    <p>The data described above is used only for the following purposes:</p>
+    <ul>
+      <li><strong>AI parsing</strong> — to convert your natural language input into a structured reminder;</li>
+      <li><strong>Rate limiting</strong> — to enforce fair usage limits per subscription tier and prevent abuse of the AI endpoint;</li>
+      <li><strong>Subscription enforcement</strong> — to determine which features and limits apply to your account.</li>
+    </ul>
+    <p>We do not use your data for advertising, profiling, or any purpose beyond operating the Service.</p>
+
+    <!-- 4 -->
+    <h2 id="p4">4. iCloud and CloudKit Storage</h2>
+    <p>All of your reminders, contacts, and private notes are stored exclusively in your personal iCloud account using Apple's <strong>CloudKit private database</strong>. This means:</p>
+    <ul>
+      <li>Your data is stored on Apple's iCloud infrastructure, not on any server we operate;</li>
+      <li>We have <strong>no access</strong> to your reminders, contacts, or private notes — ever;</li>
+      <li>Your data is protected by Apple's iCloud encryption and your device's security;</li>
+      <li>Your data syncs across your Apple devices automatically if you have iCloud enabled;</li>
+      <li>If you delete the app or sign out of iCloud, your data follows your iCloud account — not the app.</li>
+    </ul>
+    <p>Because your data is stored in your iCloud account, we cannot recover it if it is deleted. We have no access to it and no backup of it.</p>
+
+    <!-- 5 -->
+    <h2 id="p5">5. AI Processing</h2>
+    <p>When you submit a reminder through the Chat tab, the text of your input is sent through a secure Cloudflare Worker proxy to <strong>Anthropic's Claude Haiku API</strong> for natural language parsing. The following applies:</p>
+    <ul>
+      <li>Only the text of your reminder input is transmitted — no other personal data is included in the request;</li>
+      <li>Requests are authenticated using App Attest and a short-lived JWT token to prevent unauthorized access;</li>
+      <li>We do not store the content of your chat inputs on any server after processing;</li>
+      <li>Anthropic may process and store request data in accordance with their own <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>. We encourage you to review it.</li>
+    </ul>
+    <p>Avoid entering highly sensitive personal information (e.g., passwords, financial account numbers, medical diagnoses) through the chat interface.</p>
+
+    <!-- 6 -->
+    <h2 id="p6">6. Voice Input</h2>
+    <p>Voice transcription in the Chat tab is performed entirely <strong>on your device</strong> using Apple's on-device speech recognition framework (AVFoundation / Speech framework). No audio is ever recorded, transmitted, or processed by us or any third party. The transcript appears in the text input field, where you can review it before submitting.</p>
+
+    <!-- 7 -->
+    <h2 id="p7">7. Notifications</h2>
+    <p>Remind AI uses iOS push notifications to deliver your scheduled reminders. Notification scheduling and delivery are handled by iOS on your device. We do not use a push notification server — reminders are scheduled locally on your device and fire without any server involvement.</p>
+
+    <!-- 8 -->
+    <h2 id="p8">8. Third-Party Services</h2>
+    <p>The following third-party services are involved in the operation of Remind AI:</p>
+    <ul>
+      <li><strong>Apple iCloud / CloudKit</strong> — data storage. Governed by Apple's <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Privacy Policy</a>.</li>
+      <li><strong>Apple App Store</strong> — subscription billing. Governed by Apple's terms.</li>
+      <li><strong>Anthropic (Claude Haiku)</strong> — AI parsing of chat input. Governed by Anthropic's <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.</li>
+      <li><strong>Cloudflare Workers</strong> — secure proxy for AI requests. Governed by Cloudflare's <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Privacy Policy</a>.</li>
+    </ul>
+
+    <!-- 9 -->
+    <h2 id="p9">9. Data We Do Not Collect</h2>
+    <p>To be explicit, Remind AI does <strong>not</strong> collect or have access to:</p>
+    <ul>
+      <li>Your name, email address, or Apple ID;</li>
+      <li>Your phone number or any contact information;</li>
+      <li>The content of your reminders, contacts, or private notes (these stay in your iCloud);</li>
+      <li>Your location;</li>
+      <li>Your device's camera or microphone recordings (audio never leaves your device);</li>
+      <li>Your browsing history or activity outside the app;</li>
+      <li>Any data from your iPhone Contacts (if you import contacts, only names are stored in your iCloud — no phone numbers or email addresses are accessed or stored by us).</li>
+    </ul>
+
+    <!-- 10 -->
+    <h2 id="p10">10. Data Retention and Deletion</h2>
+    <p>Because your personal data lives in your own iCloud account, <strong>you are in full control of it</strong>:</p>
+    <ul>
+      <li><strong>To delete your data:</strong> Delete the app from your device. All data stored in the app's CloudKit private container will be deleted from your iCloud.</li>
+      <li><strong>Rate-limiting data:</strong> Anonymous per-device request counters stored in our Cloudflare KV store are automatically expired after a short rolling window.</li>
+      <li><strong>Subscription data:</strong> Receipt confirmations are used only to validate your current subscription status and are not retained beyond what is necessary for this purpose.</li>
+    </ul>
+
+    <!-- 11 -->
+    <h2 id="p11">11. Children's Privacy</h2>
+    <p>The Service is not directed to children under the age of 13. We do not knowingly collect personal information from anyone under 13. If you believe a child under 13 has used the Service, please contact us and we will take appropriate action.</p>
+
+    <!-- 12 -->
+    <h2 id="p12">12. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last Updated" date at the top of this page. For material changes, we will provide notice through the app or App Store update notes. Your continued use of the Service after any changes constitutes your acceptance of the updated policy.</p>
+
+    <!-- 13 -->
+    <h2 id="p13">13. Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact us:</p>
+    <p><strong>Email:</strong> <a href="mailto:support@remindai.app">support@remindai.app</a></p>
+
+  </div>
+
+  <!-- Back link -->
+  <div style="margin-top:48px;padding-top:32px;border-top:1px solid #E6E8F0;">
+    <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;color:#5963F2;font-size:14px;font-weight:600;text-decoration:none;">
+      ← Back to Remind AI
+    </a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer style="background:#05060F;border-top:1px solid rgba(255,255,255,0.05);">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <img src="brand_assets/Remind AI logo.png" alt="Remind AI" style="width:30px;height:30px;border-radius:8px;opacity:0.75;">
+        <span style="font-size:14px;font-weight:600;color:rgba(255,255,255,0.5);">Remind AI</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:32px;">
+        <a href="privacy.html" class="footer-link" style="color:rgba(255,255,255,0.65);">Privacy Policy</a>
+        <a href="terms.html" class="footer-link">Terms of Service</a>
+        <a href="#" class="footer-link">App Store</a>
+      </div>
+      <span style="font-size:13px;color:rgba(255,255,255,0.2);">© 2026 Remind AI · iOS 17+</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

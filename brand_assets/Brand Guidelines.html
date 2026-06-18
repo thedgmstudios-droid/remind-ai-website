@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Remind AI — Brand Guidelines</title>
+<style>
+  /* ─── Reset & Base ─── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    /* Brand tokens (from AppTheme.swift) */
+    --accent:        #5963F2;   /* rgb(89, 99, 242)   — indigo-violet */
+    --accent-soft:   #EBEDFF;   /* rgb(235, 237, 255) — lavender tint */
+    --background:    #FCFCFF;   /* rgb(252, 252, 255) — off-white blue */
+    --surface:       #FFFFFF;
+    --surface-alt:   #F5F7FC;   /* rgb(245, 247, 252) — cool grey */
+    --border:        #E6E8F0;   /* rgb(230, 232, 240) */
+    --text-primary:  #1A1C2B;   /* rgb(26,  28,  43)  — near-black */
+    --text-muted:    #737A8C;   /* rgb(115, 122, 140) — medium grey */
+    --success:       #33B373;   /* rgb(51,  179, 115) — green */
+    --red:           #FF3B30;   /* iOS system red */
+    --orange:        #FF9500;   /* iOS system orange */
+
+    /* Asset catalog AccentColor (used for native SwiftUI controls) */
+    --accent-native: #2D71F1;   /* rgb(45, 113, 241) */
+
+    /* Typography scale */
+    --font: -apple-system, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+
+    /* Radii */
+    --r-sm:   8px;
+    --r-md:   12px;
+    --r-lg:   14px;
+    --r-xl:   16px;
+  }
+
+  html { background: #F0F1F8; font-family: var(--font); color: var(--text-primary); }
+
+  body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+    background: transparent;
+  }
+
+  /* ─── Page header ─── */
+  .page-header {
+    margin-bottom: 56px;
+  }
+  .page-header .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .page-header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .page-header p {
+    font-size: 15px;
+    color: var(--text-muted);
+    max-width: 520px;
+    line-height: 1.6;
+  }
+  .page-header .version-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 12px;
+  }
+
+  /* ─── Section ─── */
+  .section {
+    margin-bottom: 64px;
+  }
+  .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ─── Cards ─── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 16px;
+  }
+  .card h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+  }
+
+  /* ─── Color palettes ─── */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+  .color-tile {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .color-tile .swatch {
+    height: 72px;
+    width: 100%;
+  }
+  .color-tile .color-info {
+    padding: 10px 12px;
+  }
+  .color-tile .color-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .color-tile .color-token {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent);
+    font-family: "SF Mono", "Fira Mono", monospace;
+    margin-top: 2px;
+  }
+  .color-tile .color-hex {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: "SF Mono", "Fira Mono", monospace;
+    margin-top: 2px;
+  }
+  .color-tile .color-rgb {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-family: "SF Mono", "Fira Mono", monospace;
+    margin-top: 1px;
+  }
+  .color-tile .color-usage {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    line-height: 1.4;
+    padding-top: 6px;
+    border-top: 1px solid var(--surface-alt);
+  }
+
+  /* ─── Typography scale ─── */
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--surface-alt);
+  }
+  .type-row:last-child { border-bottom: none; }
+  .type-row .type-meta {
+    min-width: 200px;
+    flex-shrink: 0;
+  }
+  .type-row .type-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .type-row .type-spec {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: "SF Mono", "Fira Mono", monospace;
+    margin-top: 2px;
+  }
+  .type-row .type-usage {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+  .type-row .type-preview {
+    flex: 1;
+    color: var(--text-primary);
+  }
+
+  /* ─── Spacing ─── */
+  .spacing-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-end;
+  }
+  .spacing-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .spacing-bar {
+    background: var(--accent-soft);
+    border: 1.5px solid var(--accent);
+    border-radius: 4px;
+    width: 40px;
+  }
+  .spacing-item .spacing-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: "SF Mono", "Fira Mono", monospace;
+  }
+  .spacing-item .spacing-usage {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-align: center;
+    max-width: 60px;
+    line-height: 1.3;
+  }
+
+  /* ─── Radius ─── */
+  .radius-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .radius-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .radius-box {
+    width: 64px;
+    height: 64px;
+    background: var(--accent-soft);
+    border: 2px solid var(--accent);
+  }
+  .radius-item .radius-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: "SF Mono", "Fira Mono", monospace;
+  }
+  .radius-item .radius-usage {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-align: center;
+    max-width: 80px;
+    line-height: 1.3;
+  }
+
+  /* ─── Component examples ─── */
+  .component-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--surface-alt);
+  }
+  .component-row:last-child { border-bottom: none; }
+  .component-label {
+    min-width: 160px;
+    padding-top: 4px;
+  }
+  .component-label .comp-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .component-label .comp-desc {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+  .component-preview { flex: 1; }
+
+  /* Live components */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--accent);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 14px 24px;
+    border-radius: var(--r-xl);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 320px;
+  }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--surface-alt);
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: var(--r-md);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 320px;
+  }
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  .fab {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(89, 99, 242, 0.4);
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .chat-bubble-user {
+    background: var(--accent);
+    color: white;
+    font-size: 15px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    display: inline-block;
+    max-width: 280px;
+  }
+  .chat-bubble-assistant {
+    background: var(--surface-alt);
+    color: var(--text-primary);
+    font-size: 15px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    display: inline-block;
+    max-width: 280px;
+  }
+  .chat-bubble-notice {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface-alt);
+    border: 1px solid rgba(255, 149, 0, 0.35);
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: var(--r-md);
+  }
+  .composer-input {
+    background: var(--surface-alt);
+    border: none;
+    border-radius: 14px;
+    padding: 12px 14px;
+    font-size: 15px;
+    color: var(--text-primary);
+    width: 100%;
+    max-width: 260px;
+    font-family: var(--font);
+    outline: none;
+  }
+  .mic-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .send-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .send-btn-disabled {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    opacity: 0.6;
+  }
+  .avatar-lg {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .avatar-sm {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .avatar-xs {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .recur-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 100px;
+  }
+  .option-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: var(--accent-soft);
+    border: 1.5px solid var(--accent);
+    border-radius: 14px;
+    max-width: 320px;
+  }
+  .option-emoji-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  .option-label { font-size: 15px; font-weight: 500; flex: 1; color: var(--text-primary); }
+  .checkmark-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .capability-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+    background: var(--surface-alt);
+    border-radius: 14px;
+    max-width: 320px;
+  }
+  .cap-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 17px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .cap-title { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+  .cap-desc  { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+  .progress-bar-wrap {
+    background: var(--surface-alt);
+    border-radius: 100px;
+    height: 4px;
+    width: 240px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    background: var(--accent);
+    height: 4px;
+    width: 65%;
+    border-radius: 100px;
+  }
+  .section-header-overdue {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--red);
+  }
+  .section-header-recurring {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .section-header-normal {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .reminder-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 6px 0;
+  }
+  .checkbox-icon { font-size: 22px; color: var(--accent); line-height: 1; padding-top: 2px; }
+  .reminder-title { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+  .reminder-meta  { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .reminder-meta-accent { font-size: 12px; font-weight: 500; color: var(--accent); }
+  .detail-reminder-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    background: var(--surface-alt);
+    border-radius: 12px;
+    max-width: 320px;
+  }
+  .bell-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(89, 99, 242, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .note-card {
+    padding: 12px;
+    background: var(--surface-alt);
+    border-radius: 12px;
+    max-width: 320px;
+  }
+  .note-body { font-size: 14px; color: var(--text-primary); }
+  .note-date { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+  .back-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--surface-alt);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .popover-menu {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    max-width: 240px;
+  }
+  .popover-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .popover-row:last-child { border-bottom: none; }
+  .popover-name { font-size: 14px; font-weight: 500; color: var(--text-primary); }
+  .popover-role { font-size: 11px; color: var(--text-muted); margin-left: auto; }
+  .onboarding-title-block {
+    max-width: 320px;
+  }
+  .onboarding-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .onboarding-h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .onboarding-sub {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* SF Symbols approximated with Unicode / CSS */
+  .sf { font-style: normal; }
+
+  /* ─── Icon grid ─── */
+  .icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    min-width: 76px;
+  }
+  .icon-item .icon-sym {
+    font-size: 22px;
+    color: var(--accent);
+  }
+  .icon-item .icon-name {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-family: "SF Mono", "Fira Mono", monospace;
+    text-align: center;
+  }
+
+  /* ─── Do / Don't ─── */
+  .do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .do-box {
+    background: #EDFBF3;
+    border: 1.5px solid #33B373;
+    border-radius: 14px;
+    padding: 16px;
+  }
+  .dont-box {
+    background: #FFF0F0;
+    border: 1.5px solid #FF3B30;
+    border-radius: 14px;
+    padding: 16px;
+  }
+  .do-box .label { font-size: 11px; font-weight: 700; color: #33B373; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .dont-box .label { font-size: 11px; font-weight: 700; color: #FF3B30; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .do-box p, .dont-box p { font-size: 13px; color: var(--text-primary); line-height: 1.5; }
+
+  /* ─── Token table ─── */
+  .token-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .token-table thead tr { border-bottom: 2px solid var(--border); }
+  .token-table th { text-align: left; padding: 8px 12px; font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; }
+  .token-table td { padding: 10px 12px; border-bottom: 1px solid var(--surface-alt); vertical-align: middle; }
+  .token-table tr:last-child td { border-bottom: none; }
+  .token-table .mono { font-family: "SF Mono", "Fira Mono", monospace; color: var(--accent); font-size: 12px; }
+  .swatch-sm { width: 20px; height: 20px; border-radius: 4px; display: inline-block; border: 1px solid rgba(0,0,0,0.08); vertical-align: middle; margin-right: 8px; }
+
+  /* ─── Misc ─── */
+  .flex-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+  .flex-col  { display: flex; flex-direction: column; gap: 10px; }
+  .tag { display: inline-flex; align-items: center; background: var(--surface-alt); border: 1px solid var(--border); border-radius: 8px; padding: 3px 8px; font-size: 11px; color: var(--text-muted); font-family: "SF Mono", "Fira Mono", monospace; }
+
+  @media (max-width: 600px) {
+    body { padding: 24px 16px 64px; }
+    .do-dont { grid-template-columns: 1fr; }
+    .color-grid { grid-template-columns: 1fr 1fr; }
+    .type-row { flex-direction: column; gap: 6px; }
+    .type-row .type-meta { min-width: unset; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ───────── PAGE HEADER ───────── -->
+<div class="page-header">
+  <div class="eyebrow">Brand Guidelines</div>
+  <h1>Remind AI</h1>
+  <p>A minimalist iOS reminder app with natural-language parsing and a lightweight personal CRM. These guidelines define the visual identity used across every screen of the app.</p>
+  <div class="version-badge">v1.0 · May 2026 · iOS 17+</div>
+</div>
+
+
+<!-- ───────── 1. COLOR ───────── -->
+<div class="section">
+  <div class="section-title">01 — Color</div>
+
+  <div class="card">
+    <h3>Brand Colors</h3>
+    <div class="color-grid">
+
+      <div class="color-tile">
+        <div class="swatch" style="background:#5963F2;"></div>
+        <div class="color-info">
+          <div class="color-name">Accent</div>
+          <div class="color-token">AppTheme.accent</div>
+          <div class="color-hex">#5963F2</div>
+          <div class="color-rgb">rgb(89, 99, 242)</div>
+          <div class="color-usage">Primary CTAs, FAB, active icons, links, recurring indicators</div>
+        </div>
+      </div>
+
+      <div class="color-tile">
+        <div class="swatch" style="background:#EBEDFF; border-bottom:1px solid #E6E8F0;"></div>
+        <div class="color-info">
+          <div class="color-name">Accent Soft</div>
+          <div class="color-token">AppTheme.accentSoft</div>
+          <div class="color-hex">#EBEDFF</div>
+          <div class="color-rgb">rgb(235, 237, 255)</div>
+          <div class="color-usage">Avatar backgrounds, badge fills, selected option rows, icon backgrounds</div>
+        </div>
+      </div>
+
+      <div class="color-tile">
+        <div class="swatch" style="background:#33B373;"></div>
+        <div class="color-info">
+          <div class="color-name">Success</div>
+          <div class="color-token">AppTheme.success</div>
+          <div class="color-hex">#33B373</div>
+          <div class="color-rgb">rgb(51, 179, 115)</div>
+          <div class="color-usage">Completed checkboxes, Done swipe-action tint</div>
+        </div>
+      </div>
+
+      <div class="color-tile">
+        <div class="swatch" style="background:#FF3B30;"></div>
+        <div class="color-info">
+          <div class="color-name">Destructive / Overdue</div>
+          <div class="color-token">Color.red (iOS system)</div>
+          <div class="color-hex">#FF3B30</div>
+          <div class="color-rgb">rgb(255, 59, 48)</div>
+          <div class="color-usage">Overdue section headers, overdue date labels, error states, delete actions</div>
+        </div>
+      </div>
+
+      <div class="color-tile">
+        <div class="swatch" style="background:#FF9500;"></div>
+        <div class="color-info">
+          <div class="color-name">Warning / Notice</div>
+          <div class="color-token">Color.orange (iOS system)</div>
+          <div class="color-hex">#FF9500</div>
+          <div class="color-rgb">rgb(255, 149, 0)</div>
+          <div class="color-usage">System notice bubbles (limit alerts), notice icons</div>
+        </div>
+      </div>
+
+      <div class="color-tile">
+        <div class="swatch" style="background:#2D71F1;"></div>
+        <div class="color-info">
+          <div class="color-name">Native Accent</div>
+          <div class="color-token">AccentColor (Asset Catalog)</div>
+          <div class="color-hex">#2D71F1</div>
+          <div class="color-rgb">rgb(45, 113, 241)</div>
+          <div class="color-usage">iOS native controls (DatePicker, Picker, Toggle) — not used directly in code</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Surface & Background</h3>
+    <div class="color-grid">
+
+      <div class="color-tile">
+        <div class="swatch" style="background:#FCFCFF; border-bottom:1px solid #E6E8F0;"></div>
+        <div class="color-info">
+          <div class="color-name">Background</div>
+          <div class="color-token">AppTheme.background</div>
+          <div class="color-hex">#FCFCFF</div>
+          <div class="color-rgb">rgb(252, 252, 255)</div>
+          <div class="color-usage">App-wide screen background, composer bar fill</div>
+        </div>
+      </div>
+
+      <div class="color-tile">
+        <div class="swatch" style="background:#FFFFFF; border-bottom:1px solid #E6E8F0;"></div>
+        <div class="color-info">
+          <div class="color-name">Surface</div>
+          <div class="color-token">AppTheme.surface</div>
+          <div class="color-hex">#FFFFFF</div>
+          <div class="color-rgb">rgb(255, 255, 255)</div>
+          <div class="color-usage">Cards, popovers, @-mention overlay background</div>
+        </div>
+      </div>
+
+      <div class="color-tile">
+        <div class="swatch" style="background:#F5F7FC; border-bottom:1px solid #E6E8F0;"></div>
+        <div class="color-info">
+          <div class="color-name">Surface Alt</div>
+          <div class="color-token">AppTheme.surfaceAlt</div>
+          <div class="color-hex">#F5F7FC</div>
+          <div class="color-rgb">rgb(245, 247, 252)</div>
+          <div class="color-usage">Chat input field, assistant bubbles, option rows, detail cards, onboarding progress track</div>
+        </div>
+      </div>
+
+      <div class="color-tile">
+        <div class="swatch" style="background:#E6E8F0; border-bottom:1px solid #ddd;"></div>
+        <div class="color-info">
+          <div class="color-name">Border</div>
+          <div class="color-token">AppTheme.border</div>
+          <div class="color-hex">#E6E8F0</div>
+          <div class="color-rgb">rgb(230, 232, 240)</div>
+          <div class="color-usage">Card strokes, dividers, unselected option outlines, popover dividers</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Text</h3>
+    <div class="color-grid">
+
+      <div class="color-tile">
+        <div class="swatch" style="background:#1A1C2B;"></div>
+        <div class="color-info">
+          <div class="color-name">Text Primary</div>
+          <div class="color-token">AppTheme.textPrimary</div>
+          <div class="color-hex">#1A1C2B</div>
+          <div class="color-rgb">rgb(26, 28, 43)</div>
+          <div class="color-usage">Headings, reminder titles, body copy, active labels</div>
+        </div>
+      </div>
+
+      <div class="color-tile">
+        <div class="swatch" style="background:#737A8C;"></div>
+        <div class="color-info">
+          <div class="color-name">Text Muted</div>
+          <div class="color-token">AppTheme.textMuted</div>
+          <div class="color-hex">#737A8C</div>
+          <div class="color-rgb">rgb(115, 122, 140)</div>
+          <div class="color-usage">Date labels, section headers, captions, placeholders, secondary text, disabled send button</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Quick-reference Token Table</h3>
+    <table class="token-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Token</th>
+          <th>Hex</th>
+          <th>Swift</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="swatch-sm" style="background:#5963F2;"></span></td><td>Accent</td><td class="mono">#5963F2</td><td class="mono">AppTheme.accent</td></tr>
+        <tr><td><span class="swatch-sm" style="background:#EBEDFF; border:1px solid #ccc;"></span></td><td>Accent Soft</td><td class="mono">#EBEDFF</td><td class="mono">AppTheme.accentSoft</td></tr>
+        <tr><td><span class="swatch-sm" style="background:#FCFCFF; border:1px solid #ccc;"></span></td><td>Background</td><td class="mono">#FCFCFF</td><td class="mono">AppTheme.background</td></tr>
+        <tr><td><span class="swatch-sm" style="background:#FFFFFF; border:1px solid #ccc;"></span></td><td>Surface</td><td class="mono">#FFFFFF</td><td class="mono">AppTheme.surface</td></tr>
+        <tr><td><span class="swatch-sm" style="background:#F5F7FC; border:1px solid #ccc;"></span></td><td>Surface Alt</td><td class="mono">#F5F7FC</td><td class="mono">AppTheme.surfaceAlt</td></tr>
+        <tr><td><span class="swatch-sm" style="background:#E6E8F0;"></span></td><td>Border</td><td class="mono">#E6E8F0</td><td class="mono">AppTheme.border</td></tr>
+        <tr><td><span class="swatch-sm" style="background:#1A1C2B;"></span></td><td>Text Primary</td><td class="mono">#1A1C2B</td><td class="mono">AppTheme.textPrimary</td></tr>
+        <tr><td><span class="swatch-sm" style="background:#737A8C;"></span></td><td>Text Muted</td><td class="mono">#737A8C</td><td class="mono">AppTheme.textMuted</td></tr>
+        <tr><td><span class="swatch-sm" style="background:#33B373;"></span></td><td>Success</td><td class="mono">#33B373</td><td class="mono">AppTheme.success</td></tr>
+        <tr><td><span class="swatch-sm" style="background:#FF3B30;"></span></td><td>Destructive / Overdue</td><td class="mono">#FF3B30</td><td class="mono">Color.red</td></tr>
+        <tr><td><span class="swatch-sm" style="background:#FF9500;"></span></td><td>Warning / Notice</td><td class="mono">#FF9500</td><td class="mono">Color.orange</td></tr>
+        <tr><td><span class="swatch-sm" style="background:#2D71F1;"></span></td><td>Native Accent</td><td class="mono">#2D71F1</td><td class="mono">AccentColor</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ───────── 2. TYPOGRAPHY ───────── -->
+<div class="section">
+  <div class="section-title">02 — Typography</div>
+
+  <div class="card">
+    <h3>Typeface</h3>
+    <p style="font-size:15px;color:var(--text-muted);line-height:1.6;margin-bottom:16px;">
+      Remind AI uses <strong style="color:var(--text-primary);">SF Pro</strong> exclusively — the system font on iOS. This is declared via <code class="tag">.font(.system(size:weight:))</code> in SwiftUI, giving access to SF Pro Text (≤19pt) and SF Pro Display (≥20pt) automatically. No custom fonts are imported.
+    </p>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-label">Display / Onboarding Title</div>
+        <div class="type-spec">28pt · Bold</div>
+        <div class="type-usage">OnboardingTitleBlock titles</div>
+      </div>
+      <div class="type-preview" style="font-size:28px;font-weight:700;color:var(--text-primary);">Your personal CRM</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-label">Large Title (Detail Header)</div>
+        <div class="type-spec">22pt · Bold</div>
+        <div class="type-usage">Person detail header name, person avatar initials</div>
+      </div>
+      <div class="type-preview" style="font-size:22px;font-weight:700;color:var(--text-primary);">Sarah Johnson</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-label">Title / Navigation</div>
+        <div class="type-spec">17pt · Semibold</div>
+        <div class="type-usage">Onboarding CTA buttons, primary empty-state headings, back chevron font size, offline title</div>
+      </div>
+      <div class="type-preview" style="font-size:17px;font-weight:600;color:var(--text-primary);">Just tell me what to remember</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-label">Body / Primary</div>
+        <div class="type-spec">15pt · Semibold</div>
+        <div class="type-usage">Reminder list titles, secondary CTA buttons, person list names, option row labels, confirmation bubble text</div>
+      </div>
+      <div class="type-preview" style="font-size:15px;font-weight:600;color:var(--text-primary);">Call Mom on Sunday at 7 pm</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-label">Body / Regular</div>
+        <div class="type-spec">15pt · Regular</div>
+        <div class="type-usage">Chat bubbles (user + assistant), composer placeholder</div>
+      </div>
+      <div class="type-preview" style="font-size:15px;font-weight:400;color:var(--text-primary);">Got it. I'll remind you to "Call Mom" on Sun, Jun 1 · 7:00 PM.</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-label">Body Small / Semibold</div>
+        <div class="type-spec">14pt · Semibold</div>
+        <div class="type-usage">Reminder titles inside detail rows, option row title in popovers</div>
+      </div>
+      <div class="type-preview" style="font-size:14px;font-weight:600;color:var(--text-primary);">Water the plants</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-label">Body Small / Regular</div>
+        <div class="type-spec">14pt · Regular</div>
+        <div class="type-usage">Empty-state captions, offline description copy, note body text</div>
+      </div>
+      <div class="type-preview" style="font-size:14px;font-weight:400;color:var(--text-muted);">Add someone in the People tab to link this reminder to them.</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-label">Caption / Semibold</div>
+        <div class="type-spec">13pt · Semibold</div>
+        <div class="type-usage">Section headers (uppercase), notice bubble text, capability card subtitles</div>
+      </div>
+      <div class="type-preview" style="font-size:13px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;">Private Notes</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-label">Caption / Regular</div>
+        <div class="type-spec">13pt · Regular</div>
+        <div class="type-usage">Capability card summaries, reminder notes preview (2-line clamp), voice error text</div>
+      </div>
+      <div class="type-preview" style="font-size:13px;font-weight:400;color:var(--text-muted);">Your notes stay private in iCloud and never leave the app.</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-label">Micro / Date</div>
+        <div class="type-spec">12pt · Regular or Semibold</div>
+        <div class="type-usage">Reminder date labels (regular), overdue date labels (semibold), person roles in rows</div>
+      </div>
+      <div class="type-preview">
+        <span style="font-size:12px;font-weight:400;color:var(--text-muted);">Mon, Jun 2 · 9:00 AM</span>
+        &nbsp;&nbsp;
+        <span style="font-size:12px;font-weight:600;color:var(--red);">Overdue · May 28 · 2 days ago</span>
+      </div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-label">Label / Badge</div>
+        <div class="type-spec">11pt · Semibold</div>
+        <div class="type-usage">Recurrence badges, note timestamps, iCloud disclaimer, popover role labels</div>
+      </div>
+      <div class="type-preview" style="font-size:11px;font-weight:600;color:var(--text-muted);">Stored privately on your iCloud.</div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-label">Eyebrow</div>
+        <div class="type-spec">11pt · Semibold · tracking 1.2px</div>
+        <div class="type-usage">OnboardingTitleBlock eyebrow labels (uppercase, accent color)</div>
+      </div>
+      <div class="type-preview" style="font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent);">What Remind AI does</div>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <h3>Empty State Icon Size</h3>
+    <p style="font-size:13px;color:var(--text-muted);line-height:1.6;">
+      Empty state illustrations use <strong style="color:var(--text-primary);">SF Symbols at 36pt · Light weight</strong>, colored with <code class="tag">AppTheme.textMuted</code>. Chat empty-state icon uses <code class="tag">AppTheme.accent</code> (sparkles). This light weight creates a deliberately understated, non-intrusive illustration style.
+    </p>
+  </div>
+</div>
+
+
+<!-- ───────── 3. SPACING & LAYOUT ───────── -->
+<div class="section">
+  <div class="section-title">03 — Spacing &amp; Layout</div>
+
+  <div class="card">
+    <h3>Horizontal Padding</h3>
+    <div class="spacing-grid">
+      <div class="spacing-item">
+        <div class="spacing-bar" style="height:20px;"></div>
+        <div class="spacing-label">20pt</div>
+        <div class="spacing-usage">Main content, onboarding shell</div>
+      </div>
+      <div class="spacing-item">
+        <div class="spacing-bar" style="height:16px;"></div>
+        <div class="spacing-label">16pt</div>
+        <div class="spacing-usage">Chat scroll view</div>
+      </div>
+      <div class="spacing-item">
+        <div class="spacing-bar" style="height:14px;"></div>
+        <div class="spacing-label">14pt</div>
+        <div class="spacing-usage">Popover rows, bubble padding horizontal</div>
+      </div>
+      <div class="spacing-item">
+        <div class="spacing-bar" style="height:12px;"></div>
+        <div class="spacing-label">12pt</div>
+        <div class="spacing-usage">Composer bar, popover outer padding, detail cards</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Vertical Spacing — Common Values</h3>
+    <table class="token-table">
+      <thead><tr><th>Value</th><th>Usage</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">4pt</td><td>Reminder row internal padding, person row padding</td></tr>
+        <tr><td class="mono">6pt</td><td>Inline label stack gap (title ↔ date), badge internal padding vertical</td></tr>
+        <tr><td class="mono">8pt</td><td>Title block spacing, inline HStack gaps</td></tr>
+        <tr><td class="mono">10pt</td><td>Chat scroll padding vertical, popover row padding vertical, detail row vertical</td></tr>
+        <tr><td class="mono">12pt</td><td>Empty-state VStack gap, chat message list gap, notes section item gap</td></tr>
+        <tr><td class="mono">14pt</td><td>Option row internal padding, capability card internal padding</td></tr>
+        <tr><td class="mono">16pt</td><td>CTA button vertical padding (onboarding), FAB bottom offset</td></tr>
+        <tr><td class="mono">20pt</td><td>PersonDetailView section margin, PersonDetail padding top/bottom</td></tr>
+        <tr><td class="mono">22pt</td><td>OnboardingTitleBlock bottom padding</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Touch Targets</h3>
+    <table class="token-table">
+      <thead><tr><th>Component</th><th>Size</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>FAB (New Reminder)</td><td class="mono">56 × 56pt</td><td>Circle, bottom-trailing, shadow offset y:8 radius:16</td></tr>
+        <tr><td>Mic / Send buttons</td><td class="mono">40 × 40pt</td><td>Circle, inside chat composer</td></tr>
+        <tr><td>Back / Onboarding nav</td><td class="mono">36 × 36pt</td><td>Circle, surfaceAlt fill</td></tr>
+        <tr><td>Reminder checkbox</td><td class="mono">28 × 28pt</td><td>Circle content shape, visual icon 22pt</td></tr>
+        <tr><td>Bell icon in reminder rows</td><td class="mono">20 × 20pt</td><td>Circle, accentSoft fill, icon 12pt</td></tr>
+        <tr><td>Avatar (Person Detail header)</td><td class="mono">64 × 64pt</td><td>Circle, accentSoft fill</td></tr>
+        <tr><td>Avatar (People list row)</td><td class="mono">40 × 40pt</td><td>Circle, accentSoft fill</td></tr>
+        <tr><td>Avatar (Mention popover)</td><td class="mono">26 × 26pt</td><td>Circle, accentSoft fill</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+<!-- ───────── 4. SHAPE / CORNER RADIUS ───────── -->
+<div class="section">
+  <div class="section-title">04 — Shape &amp; Corner Radius</div>
+
+  <div class="card">
+    <h3>Radius Scale</h3>
+    <div class="radius-grid">
+
+      <div class="radius-item">
+        <div class="radius-box" style="border-radius:0;"></div>
+        <div class="radius-label">Circle</div>
+        <div class="radius-usage">FAB, mic/send, avatars, checkboxes, progress bar (Capsule)</div>
+      </div>
+
+      <div class="radius-item">
+        <div class="radius-box" style="border-radius:8px;"></div>
+        <div class="radius-label">8pt</div>
+        <div class="radius-usage">Custom-days stepper input field</div>
+      </div>
+
+      <div class="radius-item">
+        <div class="radius-box" style="border-radius:10px;"></div>
+        <div class="radius-label">10pt</div>
+        <div class="radius-usage">Emoji icon box in option rows, capability card icon background</div>
+      </div>
+
+      <div class="radius-item">
+        <div class="radius-box" style="border-radius:12px;"></div>
+        <div class="radius-label">12pt</div>
+        <div class="radius-usage">Notice chat bubbles, secondary buttons (offline CTA), detail reminder rows, note cards</div>
+      </div>
+
+      <div class="radius-item">
+        <div class="radius-box" style="border-radius:14px;"></div>
+        <div class="radius-label">14pt</div>
+        <div class="radius-usage">User/assistant chat bubbles, chat input field, option rows, capability cards, popover menu, person-detail CTA</div>
+      </div>
+
+      <div class="radius-item">
+        <div class="radius-box" style="border-radius:16px;"></div>
+        <div class="radius-label">16pt</div>
+        <div class="radius-usage">Onboarding CTA button (primary full-width)</div>
+      </div>
+
+    </div>
+    <p style="margin-top:16px;font-size:13px;color:var(--text-muted);line-height:1.5;">
+      All rounded rectangles use <code class="tag">.continuous</code> style for smooth, Apple-native curves — never the default corner radius style.
+    </p>
+  </div>
+</div>
+
+
+<!-- ───────── 5. SHADOW & ELEVATION ───────── -->
+<div class="section">
+  <div class="section-title">05 — Shadow &amp; Elevation</div>
+
+  <div class="card">
+    <h3>Shadow Usage</h3>
+    <p style="font-size:14px;color:var(--text-muted);line-height:1.6;margin-bottom:16px;">
+      Shadows are used sparingly — only the FAB gets an explicit shadow to establish it as a floating action layer above the list.
+    </p>
+    <table class="token-table">
+      <thead><tr><th>Component</th><th>Color</th><th>Radius</th><th>x / y</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>FAB (Floating Action Button)</td>
+          <td><code class="tag">AppTheme.accent.opacity(0.4)</code></td>
+          <td class="mono">16pt</td>
+          <td class="mono">0 / 8pt</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px;font-size:13px;color:var(--text-muted);">All other elevation is implied through surface color contrast — no shadows on cards, sheets, or nav bars.</p>
+  </div>
+</div>
+
+
+<!-- ───────── 6. ICONOGRAPHY ───────── -->
+<div class="section">
+  <div class="section-title">06 — Iconography</div>
+
+  <div class="card">
+    <h3>SF Symbols — Core Set</h3>
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.5;">All icons are Apple SF Symbols. No third-party icon libraries are used. The consistent icon style is <strong style="color:var(--text-primary);">semibold weight</strong> for functional icons and <strong style="color:var(--text-primary);">light weight</strong> for large empty-state illustrations.</p>
+    <div class="icon-grid">
+      <div class="icon-item"><div class="icon-sym">🔔</div><div class="icon-name">bell.fill</div></div>
+      <div class="icon-item"><div class="icon-sym">🔕</div><div class="icon-name">bell.slash</div></div>
+      <div class="icon-item"><div class="icon-sym">🔔</div><div class="icon-name">bell.badge.fill</div></div>
+      <div class="icon-item"><div class="icon-sym">✨</div><div class="icon-name">sparkles</div></div>
+      <div class="icon-item"><div class="icon-sym">＋</div><div class="icon-name">plus</div></div>
+      <div class="icon-item"><div class="icon-sym">↑</div><div class="icon-name">arrow.up</div></div>
+      <div class="icon-item"><div class="icon-sym">🎤</div><div class="icon-name">mic.fill</div></div>
+      <div class="icon-item"><div class="icon-sym">⏹</div><div class="icon-name">stop.fill</div></div>
+      <div class="icon-item"><div class="icon-sym">○</div><div class="icon-name">circle</div></div>
+      <div class="icon-item"><div class="icon-sym">✅</div><div class="icon-name">checkmark.circle.fill</div></div>
+      <div class="icon-item"><div class="icon-sym">↻</div><div class="icon-name">arrow.triangle.2.circlepath</div></div>
+      <div class="icon-item"><div class="icon-sym">⚠</div><div class="icon-name">exclamationmark.circle.fill</div></div>
+      <div class="icon-item"><div class="icon-sym">‹</div><div class="icon-name">chevron.left</div></div>
+      <div class="icon-item"><div class="icon-sym">🗑</div><div class="icon-name">trash</div></div>
+      <div class="icon-item"><div class="icon-sym">✓</div><div class="icon-name">checkmark</div></div>
+      <div class="icon-item"><div class="icon-sym">⏩</div><div class="icon-name">forward.fill</div></div>
+      <div class="icon-item"><div class="icon-sym">👥</div><div class="icon-name">person.2</div></div>
+      <div class="icon-item"><div class="icon-sym">📲</div><div class="icon-name">square.and.arrow.down</div></div>
+      <div class="icon-item"><div class="icon-sym">📵</div><div class="icon-name">wifi.slash</div></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ───────── 7. COMPONENTS ───────── -->
+<div class="section">
+  <div class="section-title">07 — Components</div>
+
+  <div class="card">
+    <h3>Buttons</h3>
+
+    <div class="component-row">
+      <div class="component-label">
+        <div class="comp-name">Primary CTA</div>
+        <div class="comp-desc">17pt semibold · accent fill · 16pt radius · full-width · 16pt vertical padding. Used in onboarding.</div>
+      </div>
+      <div class="component-preview">
+        <button class="btn-primary">Continue</button>
+      </div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-label">
+        <div class="comp-name">Secondary CTA</div>
+        <div class="comp-desc">15pt semibold · surfaceAlt fill · 12pt radius · full-width · 12pt vertical padding. Used in empty states (offline, no people).</div>
+      </div>
+      <div class="component-preview">
+        <button class="btn-secondary">Add manually</button>
+      </div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-label">
+        <div class="comp-name">Ghost / Link</div>
+        <div class="comp-desc">15pt semibold · no background · accent color. Used in toolbar ("Edit"), section "+ Add" actions.</div>
+      </div>
+      <div class="component-preview">
+        <button class="btn-ghost">Edit</button>
+      </div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-label">
+        <div class="comp-name">FAB</div>
+        <div class="comp-desc">56pt circle · accent fill · accent shadow. Fixed bottom-trailing (20pt trailing, 16pt bottom).</div>
+      </div>
+      <div class="component-preview">
+        <div class="fab">＋</div>
+      </div>
+    </div>
+
+    <div class="component-row">
+      <div class="component-label">
+        <div class="comp-name">Mic / Send</div>
+        <div class="comp-desc">40pt circle. Mic = accentSoft fill + accent icon (idle). Send = accent fill + white icon.</div>
+      </div>
+      <div class="component-preview">
+        <div class="flex-row">
+          <div class="mic-btn">🎤</div>
+          <div class="send-btn">↑</div>
+          <div class="send-btn-disabled">↑</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <h3>Chat Bubbles</h3>
+    <div class="component-row">
+      <div class="component-label">
+        <div class="comp-name">User bubble</div>
+        <div class="comp-desc">15pt regular · accent fill · white text · 14pt radius · right-aligned, 40pt min left spacer</div>
+      </div>
+      <div class="component-preview">
+        <div style="display:flex;justify-content:flex-end;">
+          <div class="chat-bubble-user">Remind me to call Mom on Sunday at 7pm</div>
+        </div>
+      </div>
+    </div>
+    <div class="component-row">
+      <div class="component-label">
+        <div class="comp-name">Assistant bubble</div>
+        <div class="comp-desc">15pt regular · surfaceAlt fill · textPrimary · 14pt radius · left-aligned</div>
+      </div>
+      <div class="component-preview">
+        <div class="chat-bubble-assistant">Got it. I'll remind you to "Call Mom" on Sun, Jun 1 · 7:00 PM.</div>
+      </div>
+    </div>
+    <div class="component-row">
+      <div class="component-label">
+        <div class="comp-name">Notice bubble</div>
+        <div class="comp-desc">13pt medium · surfaceAlt fill · orange border (opacity 0.35) · centered. Used for system-level messages (limit guard).</div>
+      </div>
+      <div class="component-preview">
+        <div class="chat-bubble-notice">⚠ You've hit your plan's reminder limit.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Avatars</h3>
+    <div class="component-row">
+      <div class="component-label">
+        <div class="comp-name">Sizes</div>
+        <div class="comp-desc">Three sizes. All circles, accentSoft fill, accent text (initials). Font weight matches size.</div>
+      </div>
+      <div class="component-preview">
+        <div class="flex-row" style="align-items:center;">
+          <div class="avatar-lg">SJ</div>
+          <div class="avatar-sm">SJ</div>
+          <div class="avatar-xs">SJ</div>
+        </div>
+        <div style="margin-top:8px;font-size:11px;color:var(--text-muted);">64pt · 22pt bold &nbsp;|&nbsp; 40pt · 14pt bold &nbsp;|&nbsp; 26pt · 11pt bold</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Recurrence Badge</h3>
+    <div class="component-row">
+      <div class="component-label">
+        <div class="comp-name">RecurBadge</div>
+        <div class="comp-desc">Capsule · accentSoft fill · accent text · SF Symbol arrow.triangle.2.circlepath (10pt semibold) + 11pt semibold text</div>
+      </div>
+      <div class="component-preview">
+        <div class="flex-row">
+          <div class="recur-badge">↻ Every Sunday</div>
+          <div class="recur-badge">↻ Daily</div>
+          <div class="recur-badge">↻ Monthly</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Onboarding Title Block</h3>
+    <div class="component-row">
+      <div class="component-label">
+        <div class="comp-name">Title Block</div>
+        <div class="comp-desc">Eyebrow (11pt, 1.2 tracking) + Title (28pt bold) + Subtitle (15pt muted). Left-aligned. 20pt horizontal, 8pt top, 22pt bottom padding.</div>
+      </div>
+      <div class="component-preview">
+        <div class="onboarding-title-block">
+          <div class="onboarding-eyebrow">What Remind AI does</div>
+          <div class="onboarding-h1">Your personal CRM</div>
+          <div class="onboarding-sub">Link reminders and private notes to the people who matter most.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Progress Bar</h3>
+    <div class="component-row">
+      <div class="component-label">
+        <div class="comp-name">OnboardingProgressBar</div>
+        <div class="comp-desc">4pt height · Capsule · surfaceAlt track · accent fill · easeInOut 0.32s animation</div>
+      </div>
+      <div class="component-preview">
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Section Headers (List)</h3>
+    <div class="flex-col">
+      <div class="section-header-overdue">⚠ Overdue</div>
+      <div class="section-header-recurring">↻ Recurring · Today</div>
+      <div class="section-header-normal">Today</div>
+      <div class="section-header-normal">This week</div>
+      <div class="section-header-normal">Completed Today</div>
+    </div>
+    <p style="margin-top:12px;font-size:12px;color:var(--text-muted);">Overdue: red, bold, 13pt, mixed case. Recurring Today: accent, semibold, 13pt, uppercase. All others: textMuted, semibold, 13pt, uppercase.</p>
+  </div>
+
+  <div class="card">
+    <h3>Option Row (Onboarding Selection)</h3>
+    <div class="component-row">
+      <div class="component-label">
+        <div class="comp-name">Selected state</div>
+        <div class="comp-desc">accentSoft fill · 1.5pt accent stroke · 14pt radius · checkmark circle in accent</div>
+      </div>
+      <div class="component-preview">
+        <div class="option-row">
+          <div class="option-emoji-box">📋</div>
+          <div class="option-label">Work tasks</div>
+          <div class="checkmark-circle">✓</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>@-Mention Popover</h3>
+    <div class="component-row">
+      <div class="component-label">
+        <div class="comp-name">MentionPopover</div>
+        <div class="comp-desc">surface fill · border stroke · 14pt radius · 26pt avatar · 14pt medium name · 11pt muted role. Shows up to 5 matches. Divider = AppTheme.border.</div>
+      </div>
+      <div class="component-preview">
+        <div class="popover-menu">
+          <div class="popover-row">
+            <div class="avatar-xs">SJ</div>
+            <div class="popover-name">Sarah Johnson</div>
+            <div class="popover-role">Manager</div>
+          </div>
+          <div class="popover-row">
+            <div class="avatar-xs">MB</div>
+            <div class="popover-name">Mom</div>
+            <div class="popover-role"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ───────── 8. MOTION ───────── -->
+<div class="section">
+  <div class="section-title">08 — Motion</div>
+
+  <div class="card">
+    <h3>Animation Tokens</h3>
+    <table class="token-table">
+      <thead><tr><th>Element</th><th>Curve</th><th>Duration</th></tr></thead>
+      <tbody>
+        <tr><td>Onboarding progress bar fill</td><td class="mono">easeInOut</td><td class="mono">0.32s</td></tr>
+        <tr><td>Mic button scale (recording pulse)</td><td class="mono">easeInOut</td><td class="mono">0.18s</td></tr>
+        <tr><td>Chat scroll to latest message</td><td class="mono">withAnimation (default spring)</td><td>—</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px;font-size:13px;color:var(--text-muted);">The mic button scales to <code class="tag">1.05</code> while recording, giving a subtle heartbeat effect. All other transitions defer to SwiftUI's default spring.</p>
+  </div>
+</div>
+
+
+<!-- ───────── 9. TONE ───────── -->
+<div class="section">
+  <div class="section-title">09 — Voice &amp; Tone</div>
+
+  <div class="card">
+    <h3>Writing Principles</h3>
+    <div class="do-dont">
+      <div class="do-box">
+        <div class="label">✓ Do</div>
+        <p>Use the <em>thing</em> as the reminder title — "Call Mom", "Water the plants", "Submit report".</p>
+      </div>
+      <div class="dont-box">
+        <div class="label">✗ Don't</div>
+        <p>Use the command as the title — "Set a reminder to call Mom", "Remind me to water the plants".</p>
+      </div>
+    </div>
+    <div class="do-dont" style="margin-top:12px;">
+      <div class="do-box">
+        <div class="label">✓ Do</div>
+        <p>Empty states are short, specific, and action-oriented: "No reminders yet · Tap + or open Chat."</p>
+      </div>
+      <div class="dont-box">
+        <div class="label">✗ Don't</div>
+        <p>Use marketing fluff in product copy: "Start your journey to a more organized life!"</p>
+      </div>
+    </div>
+    <div class="do-dont" style="margin-top:12px;">
+      <div class="do-box">
+        <div class="label">✓ Do</div>
+        <p>AI confirmations are terse and informative: "Got it. I'll remind you to [title] on [date]."</p>
+      </div>
+      <div class="dont-box">
+        <div class="label">✗ Don't</div>
+        <p>Over-explain in chat replies or add unnecessary filler: "Sure! I've gone ahead and created a reminder…"</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Navigation Labels</h3>
+    <p style="font-size:14px;color:var(--text-muted);line-height:1.6;">Tab titles: <strong style="color:var(--text-primary);">Reminders · Chat · People</strong>. Sheet titles: <strong style="color:var(--text-primary);">New reminder · Edit reminder</strong>. Sheet actions: <strong style="color:var(--text-primary);">Save / Cancel</strong>. Swipe actions: <strong style="color:var(--text-primary);">Done · Undo · Skip · Delete</strong>. All labels are title case. Section headers are uppercase.</p>
+  </div>
+</div>
+
+
+<!-- ───────── FOOTER ───────── -->
+<div style="margin-top:80px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--text-muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+  <span>Remind AI · Brand Guidelines v1.0</span>
+  <span>iOS 17+ · SF Pro · SwiftUI · SwiftData · CloudKit</span>
+</div>
+
+</body>
+</html>

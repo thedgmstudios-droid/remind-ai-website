@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — Remind AI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --accent: #5963F2;
+      --accent-soft: #EBEDFF;
+      --bg: #FCFCFF;
+      --surface: #F5F7FC;
+      --border: #E6E8F0;
+      --text: #1A1C2B;
+      --muted: #737A8C;
+    }
+
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+    .hero-bg {
+      background: #080A1C;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(89,99,242,0.4) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 90% 50%, rgba(89,99,242,0.1) 0%, transparent 55%);
+    }
+
+    .nav-link { color: rgba(255,255,255,0.6); font-size: 15px; font-weight: 500; text-decoration: none; transition: color 0.15s; }
+    .nav-link:hover { color: white; }
+
+    .appstore-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: white; color: #1A1C2B; padding: 10px 18px;
+      border-radius: 12px; font-weight: 600; font-size: 14px; text-decoration: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+    }
+    .appstore-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+    .footer-link { font-size: 14px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.15s; }
+    .footer-link:hover { color: rgba(255,255,255,0.75); }
+
+    /* Legal prose */
+    .legal h2 {
+      font-size: 18px; font-weight: 700; color: var(--text);
+      margin-top: 48px; margin-bottom: 12px; padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .legal h3 {
+      font-size: 15px; font-weight: 600; color: var(--text);
+      margin-top: 24px; margin-bottom: 8px;
+    }
+    .legal p {
+      font-size: 15px; color: #4A5068; line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .legal ul {
+      margin-bottom: 14px; padding-left: 20px;
+    }
+    .legal ul li {
+      font-size: 15px; color: #4A5068; line-height: 1.75;
+      margin-bottom: 6px; list-style: disc;
+    }
+    .legal strong { color: var(--text); font-weight: 600; }
+    .legal a { color: var(--accent); text-decoration: none; }
+    .legal a:hover { text-decoration: underline; }
+
+    /* Highlighted callout box */
+    .callout {
+      background: #FFF8ED;
+      border: 1.5px solid #FFD080;
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .callout p { color: #5A4010; margin-bottom: 0; }
+    .callout-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #B37800; margin-bottom: 8px; }
+
+    .limit-box {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .limit-box p { color: var(--muted); margin-bottom: 0; }
+
+    /* TOC */
+    .toc-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 0; border-bottom: 1px solid var(--border);
+      text-decoration: none; color: #4A5068; font-size: 14px;
+      transition: color 0.15s;
+    }
+    .toc-item:last-child { border-bottom: none; }
+    .toc-item:hover { color: var(--accent); }
+    .toc-num { font-size: 12px; font-weight: 700; color: var(--accent); min-width: 22px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="hero-bg sticky top-0 z-50" style="border-bottom:1px solid rgba(255,255,255,0.06);">
+  <div class="max-w-6xl mx-auto px-6 h-[62px] flex items-center justify-between">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <img src="brand_assets/Remind AI logo.png" alt="Remind AI" style="width:34px;height:34px;border-radius:9px;">
+      <span style="font-size:17px;font-weight:600;color:white;">Remind AI</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="index.html#features" class="nav-link">Features</a>
+      <a href="index.html#pricing" class="nav-link">Pricing</a>
+    </div>
+    <a href="#" class="appstore-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Download
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-bg" style="padding:64px 24px 72px;">
+  <div class="max-w-3xl mx-auto text-center">
+    <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;color:#9BA3FF;margin-bottom:14px;">Legal</p>
+    <h1 class="font-display text-white" style="font-size:clamp(36px,5vw,56px);letter-spacing:-0.03em;line-height:1.08;margin-bottom:16px;">Terms of Service</h1>
+    <p style="font-size:15px;color:rgba(255,255,255,0.5);">Last updated: May 31, 2026</p>
+  </div>
+</section>
+<div style="height:60px;background:linear-gradient(to bottom,#080A1C,#FCFCFF);"></div>
+
+<!-- CONTENT -->
+<main class="max-w-3xl mx-auto px-6 pb-24">
+
+  <!-- Intro note -->
+  <p style="font-size:15px;color:#4A5068;line-height:1.75;margin-bottom:8px;">
+    Please read these Terms of Service carefully before downloading or using the Remind AI application. By accessing or using the Service, you agree to be bound by these Terms.
+  </p>
+
+  <!-- Table of contents -->
+  <div style="background:#F5F7FC;border:1px solid #E6E8F0;border-radius:20px;padding:24px 28px;margin:32px 0;">
+    <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.3px;color:#737A8C;margin-bottom:14px;">Contents</p>
+    <a href="#s1"  class="toc-item"><span class="toc-num">1</span> Interpretation and Definitions</a>
+    <a href="#s2"  class="toc-item"><span class="toc-num">2</span> Agreement to Terms</a>
+    <a href="#s3"  class="toc-item"><span class="toc-num">3</span> Eligibility</a>
+    <a href="#s4"  class="toc-item"><span class="toc-num">4</span> Description of Service</a>
+    <a href="#s5"  class="toc-item"><span class="toc-num">5</span> No Liability for Missed or Incomplete Reminders</a>
+    <a href="#s6"  class="toc-item"><span class="toc-num">6</span> AI Features Disclaimer</a>
+    <a href="#s7"  class="toc-item"><span class="toc-num">7</span> Subscriptions and Billing</a>
+    <a href="#s8"  class="toc-item"><span class="toc-num">8</span> User Data and iCloud</a>
+    <a href="#s9"  class="toc-item"><span class="toc-num">9</span> Intellectual Property</a>
+    <a href="#s10" class="toc-item"><span class="toc-num">10</span> Prohibited Uses</a>
+    <a href="#s11" class="toc-item"><span class="toc-num">11</span> Third-Party Services</a>
+    <a href="#s12" class="toc-item"><span class="toc-num">12</span> Termination</a>
+    <a href="#s13" class="toc-item"><span class="toc-num">13</span> Disclaimer of Warranties</a>
+    <a href="#s14" class="toc-item"><span class="toc-num">14</span> Limitation of Liability</a>
+    <a href="#s15" class="toc-item"><span class="toc-num">15</span> Governing Law</a>
+    <a href="#s16" class="toc-item"><span class="toc-num">16</span> Changes to These Terms</a>
+    <a href="#s17" class="toc-item"><span class="toc-num">17</span> Contact Information</a>
+  </div>
+
+  <div class="legal">
+
+    <!-- 1 -->
+    <h2 id="s1">1. Interpretation and Definitions</h2>
+
+    <h3>1.1 Interpretation</h3>
+    <p>Capitalized terms have the meanings provided in this Section or otherwise defined throughout these Terms. Definitions apply whether terms appear in singular or plural form.</p>
+
+    <h3>1.2 Definitions</h3>
+    <ul>
+      <li><strong>Application</strong> means the iOS mobile application titled "Remind AI," including all related features, content, and updates.</li>
+      <li><strong>Company, We, Us, or Our</strong> means the developer and operator of Remind AI.</li>
+      <li><strong>Device</strong> means any Apple iOS device capable of running the Application.</li>
+      <li><strong>Service</strong> means the Application and any associated software, content, or features offered by the Company.</li>
+      <li><strong>Subscription</strong> means a paid plan granting ongoing access to the Service, processed through the Apple App Store.</li>
+      <li><strong>You</strong> means the individual downloading or using the Service.</li>
+    </ul>
+
+    <!-- 2 -->
+    <h2 id="s2">2. Agreement to Terms</h2>
+    <p>By downloading, installing, or using the Service, You acknowledge that You have read, understood, and agreed to be bound by these Terms and our <a href="privacy.html">Privacy Policy</a>. If You do not agree, You must not use the Service.</p>
+
+    <!-- 3 -->
+    <h2 id="s3">3. Eligibility</h2>
+    <p>You must be at least 13 years old to use the Service. By using the Service, You represent and warrant that You meet this requirement. If You are between 13 and 17 years old, You may only use the Service with the consent and supervision of a parent or legal guardian.</p>
+
+    <!-- 4 -->
+    <h2 id="s4">4. Description of Service</h2>
+    <p>Remind AI is a personal productivity application for iOS that allows You to create, manage, and receive notifications for reminders using natural language input, voice input, and a manual form. The Service also includes a personal contact management layer ("People") that allows You to associate reminders and private notes with individuals You choose to add.</p>
+    <p>The Service is designed as a personal organizational tool only. It is not a safety system, an emergency alert system, or a substitute for professional services of any kind.</p>
+
+    <!-- 5 — KEY SECTION -->
+    <h2 id="s5">5. No Liability for Missed or Incomplete Reminders</h2>
+
+    <div class="callout">
+      <p class="callout-title">⚠ Important — Please Read</p>
+      <p>Remind AI is a convenience tool. We do not guarantee that any reminder will be delivered, seen, or acted upon in time. You are solely responsible for fulfilling any obligation, task, or commitment — regardless of whether a reminder was created, scheduled, delivered, or acknowledged.</p>
+    </div>
+
+    <p>Without limiting the above, the Company expressly disclaims all liability for:</p>
+    <ul>
+      <li>Any reminder that was not delivered due to device settings, Do Not Disturb mode, notification permissions being disabled, iOS system behavior, internet connectivity issues, or any other reason outside our control;</li>
+      <li>Any reminder that was delivered but not seen, dismissed, snoozed, or otherwise not acted upon by You;</li>
+      <li>Any financial loss, missed appointment, missed deadline, damaged relationship, legal consequence, health consequence, or any other harm arising from Your failure — for any reason — to complete, fulfill, or act on a task, obligation, or commitment, whether or not a reminder existed for it;</li>
+      <li>Any inaccuracy in the parsed date, time, recurrence, or content of a reminder created through the AI chat interface;</li>
+      <li>Any reminder that failed to recur correctly due to device or system behavior.</li>
+    </ul>
+    <p><strong>You acknowledge that Remind AI is not a life-safety device and must not be relied upon as the sole means of remembering time-sensitive, legally binding, medically important, or otherwise critical obligations.</strong> Always maintain independent records for commitments that carry meaningful consequences.</p>
+
+    <!-- 6 -->
+    <h2 id="s6">6. AI Features Disclaimer</h2>
+    <p>The Service uses an AI language model to parse natural language input and extract reminder details such as title, date, time, and recurrence. This parsing is automated and may be inaccurate. The Company does not guarantee that the AI will correctly interpret any given input.</p>
+    <p>You are responsible for reviewing and confirming the details of every reminder created through the AI chat interface before relying on it. The Company is not liable for errors in AI-generated reminder details.</p>
+    <p>When You submit text or voice input through the chat interface, that content is transmitted to a third-party AI provider for processing. See Section 11 and our <a href="privacy.html">Privacy Policy</a> for details.</p>
+
+    <!-- 7 -->
+    <h2 id="s7">7. Subscriptions and Billing</h2>
+    <p>Access to the Service requires a paid subscription. Subscriptions are offered on a monthly or annual basis and are processed exclusively through the <strong>Apple App Store</strong>. Apple's terms and conditions govern all payment processing, billing, renewals, and refunds.</p>
+    <p>A <strong>3-day free trial</strong> is offered on both subscription tiers. Your subscription begins on the date You initiate the trial. If You do not cancel before the trial period ends, You will be automatically charged for the selected plan.</p>
+    <p>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current billing period. You may manage and cancel your subscription at any time through your Apple ID account settings. We do not process refunds directly — all refund requests must be submitted to Apple.</p>
+
+    <!-- 8 -->
+    <h2 id="s8">8. User Data and iCloud</h2>
+    <p>Your reminders, contacts, and private notes are stored in your personal iCloud account using Apple's CloudKit private database. This data is stored on your own iCloud quota and is not accessible to the Company. We do not collect, store, or have access to your reminder data or personal notes.</p>
+    <p>The Company has no ability to restore data lost due to iCloud account issues, device loss, or deletion. You are responsible for maintaining your iCloud account in good standing.</p>
+
+    <!-- 9 -->
+    <h2 id="s9">9. Intellectual Property</h2>
+    <p>All rights in the Service — including the application code, design, graphics, brand assets, and any content created by the Company — are owned exclusively by the Company or its licensors. These Terms do not grant You any ownership rights in the Service.</p>
+    <p>You may not copy, modify, distribute, sell, reverse engineer, decompile, or create derivative works from any part of the Service.</p>
+
+    <!-- 10 -->
+    <h2 id="s10">10. Prohibited Uses</h2>
+    <p>You agree not to use the Service to:</p>
+    <ul>
+      <li>Violate any applicable law or regulation;</li>
+      <li>Attempt to reverse engineer, decompile, or extract source code from the Application;</li>
+      <li>Circumvent, disable, or interfere with any security or access control mechanism;</li>
+      <li>Use the Service to harass, stalk, or harm any individual;</li>
+      <li>Access the Service through automated means or scripts;</li>
+      <li>Resell, sublicense, or otherwise commercialize access to the Service.</li>
+    </ul>
+
+    <!-- 11 -->
+    <h2 id="s11">11. Third-Party Services</h2>
+    <p>The Service integrates with or depends on the following third-party services:</p>
+    <ul>
+      <li><strong>Apple App Store</strong> — subscription billing, distribution, and device notifications;</li>
+      <li><strong>Apple iCloud / CloudKit</strong> — private data storage;</li>
+      <li><strong>Anthropic (Claude Haiku)</strong> — AI language model used to parse natural language reminder input, accessed via a secure proxy. Text submitted through the chat interface is sent to Anthropic's API for processing. Anthropic's privacy policy governs their handling of this data;</li>
+      <li><strong>Cloudflare Workers</strong> — serverless proxy infrastructure used to route AI requests securely.</li>
+    </ul>
+    <p>The Company is not responsible for the availability, accuracy, or practices of any third-party service. Your use of third-party services is governed by their respective terms and privacy policies.</p>
+
+    <!-- 12 -->
+    <h2 id="s12">12. Termination</h2>
+    <p>The Company may suspend or terminate Your access to the Service at any time, with or without notice, if You violate these Terms or engage in conduct that the Company, in its sole discretion, determines to be harmful or inappropriate. Upon termination, all rights granted to You under these Terms immediately cease.</p>
+    <p>You may stop using the Service and cancel your subscription at any time through your Apple ID account settings.</p>
+
+    <!-- 13 -->
+    <h2 id="s13">13. Disclaimer of Warranties</h2>
+    <p>THE SERVICE IS PROVIDED ON AN <strong>"AS IS"</strong> AND <strong>"AS AVAILABLE"</strong> BASIS WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, THE COMPANY EXPRESSLY DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO:</p>
+    <ul>
+      <li>Merchantability or fitness for a particular purpose;</li>
+      <li>Accuracy, reliability, or completeness of any reminder, notification, or AI output;</li>
+      <li>Uninterrupted or error-free operation of the Service;</li>
+      <li>That notifications will be delivered on time or at all;</li>
+      <li>Non-infringement of third-party rights.</li>
+    </ul>
+    <p>No advice or information obtained from the Company or through the Service creates any warranty not expressly stated here.</p>
+
+    <!-- 14 — KEY SECTION -->
+    <h2 id="s14">14. Limitation of Liability</h2>
+
+    <div class="limit-box">
+      <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE COMPANY, ITS AFFILIATES, DIRECTORS, EMPLOYEES, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO:</p>
+    </div>
+
+    <ul>
+      <li>Loss of profits, revenue, data, goodwill, or business opportunities;</li>
+      <li>Damages arising from Your failure to complete, fulfill, or act on any reminder, task, or obligation;</li>
+      <li>Damages arising from a missed appointment, missed deadline, missed medication, missed payment, or any other missed event — whether or not a reminder was set;</li>
+      <li>Damages arising from incorrect AI parsing of reminder input;</li>
+      <li>Damages arising from notification delivery failures due to device settings, iOS behavior, or network conditions;</li>
+      <li>Any other damages arising from Your use of or inability to use the Service.</li>
+    </ul>
+
+    <p>In all cases, <strong>the Company's total cumulative liability to You shall not exceed the greater of: (a) the total amount You paid for the Service in the twelve (12) months preceding the event giving rise to the claim, or (b) ten dollars (USD $10.00).</strong></p>
+
+    <p>Some jurisdictions do not allow the exclusion or limitation of certain damages. In such jurisdictions, the Company's liability is limited to the fullest extent permitted by law.</p>
+
+    <!-- 15 -->
+    <h2 id="s15">15. Governing Law</h2>
+    <p>These Terms are governed by and construed in accordance with applicable law. Any dispute arising from these Terms or your use of the Service shall be resolved through good-faith negotiation in the first instance. If unresolved, disputes shall be submitted to binding arbitration on an individual basis. Class actions and representative proceedings are not permitted.</p>
+
+    <!-- 16 -->
+    <h2 id="s16">16. Changes to These Terms</h2>
+    <p>The Company reserves the right to update or modify these Terms at any time. When material changes are made, we will update the "Last Updated" date at the top of this page. Your continued use of the Service after any changes constitutes your acceptance of the revised Terms. We encourage You to review these Terms periodically.</p>
+
+    <!-- 17 -->
+    <h2 id="s17">17. Contact Information</h2>
+    <p>If you have any questions about these Terms of Service, please contact us:</p>
+    <p><strong>Email:</strong> <a href="mailto:support@remindai.app">support@remindai.app</a></p>
+
+  </div>
+
+  <!-- Back link -->
+  <div style="margin-top:48px;padding-top:32px;border-top:1px solid #E6E8F0;">
+    <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;color:#5963F2;font-size:14px;font-weight:600;text-decoration:none;">
+      ← Back to Remind AI
+    </a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer style="background:#05060F;border-top:1px solid rgba(255,255,255,0.05);">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <img src="brand_assets/Remind AI logo.png" alt="Remind AI" style="width:30px;height:30px;border-radius:8px;opacity:0.75;">
+        <span style="font-size:14px;font-weight:600;color:rgba(255,255,255,0.5);">Remind AI</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:32px;">
+        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        <a href="terms.html" class="footer-link" style="color:rgba(255,255,255,0.65);">Terms of Service</a>
+        <a href="#" class="footer-link">App Store</a>
+      </div>
+      <span style="font-size:13px;color:rgba(255,255,255,0.2);">© 2026 Remind AI · iOS 17+</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
