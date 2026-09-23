@@ -114,6 +114,17 @@
     .highlight-box p { color: #1A4A35; margin-bottom: 0; font-size: 15px; line-height: 1.7; }
     .highlight-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #1E8A57; margin-bottom: 8px; }
 
+    .highlight-box ul { margin-bottom: 0; }
+    .highlight-box ul li { color: #1A4A35; }
+    .highlight-box strong { color: #123A28; }
+
+    /* Provider table */
+    .table-wrap { overflow-x: auto; margin-bottom: 14px; border: 1px solid var(--border); border-radius: 16px; background: white; }
+    .legal table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 520px; }
+    .legal th { text-align: left; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); background: var(--surface); padding: 12px 16px; border-bottom: 1px solid var(--border); }
+    .legal td { color: #4A5068; line-height: 1.6; padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .legal tr:last-child td { border-bottom: none; }
+
     /* TOC */
     .toc-item {
       display: flex; align-items: center; gap: 10px;
@@ -151,7 +162,7 @@
   <div class="max-w-3xl mx-auto text-center">
     <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;color:#9BA3FF;margin-bottom:14px;">Legal</p>
     <h1 class="font-display text-white" style="font-size:clamp(36px,5vw,56px);letter-spacing:-0.03em;line-height:1.08;margin-bottom:16px;">Privacy Policy</h1>
-    <p style="font-size:15px;color:rgba(255,255,255,0.5);">Last updated: May 31, 2026</p>
+    <p style="font-size:15px;color:rgba(255,255,255,0.5);">Last updated: September 22, 2026</p>
   </div>
 </section>
 <div style="height:60px;background:linear-gradient(to bottom,#080A1C,#FCFCFF);"></div>
@@ -159,149 +170,182 @@
 <!-- CONTENT -->
 <main class="max-w-3xl mx-auto px-6 pb-24">
 
-  <!-- Privacy-first callout -->
-  <div class="highlight-box">
-    <p class="highlight-title">✓ Privacy first</p>
-    <p>Remind AI is built around a simple principle: your personal data belongs to you. Your reminders, contacts, and private notes are stored in your own iCloud account. We do not have a backend database. We cannot read your notes. We do not sell your information to anyone.</p>
-  </div>
-
   <!-- Table of contents -->
   <div style="background:#F5F7FC;border:1px solid #E6E8F0;border-radius:20px;padding:24px 28px;margin:32px 0;">
     <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.3px;color:#737A8C;margin-bottom:14px;">Contents</p>
     <a href="#p1"  class="toc-item"><span class="toc-num">1</span> Who We Are</a>
-    <a href="#p2"  class="toc-item"><span class="toc-num">2</span> What Data We Collect</a>
-    <a href="#p3"  class="toc-item"><span class="toc-num">3</span> How We Use Your Data</a>
-    <a href="#p4"  class="toc-item"><span class="toc-num">4</span> iCloud and CloudKit Storage</a>
-    <a href="#p5"  class="toc-item"><span class="toc-num">5</span> AI Processing</a>
+    <a href="#p2"  class="toc-item"><span class="toc-num">2</span> Summary</a>
+    <a href="#p3"  class="toc-item"><span class="toc-num">3</span> Information Stored in Your iCloud</a>
+    <a href="#p4"  class="toc-item"><span class="toc-num">4</span> Information Sent When You Use the Chat</a>
+    <a href="#p5"  class="toc-item"><span class="toc-num">5</span> Device Authentication and Abuse Prevention</a>
     <a href="#p6"  class="toc-item"><span class="toc-num">6</span> Voice Input</a>
-    <a href="#p7"  class="toc-item"><span class="toc-num">7</span> Notifications</a>
-    <a href="#p8"  class="toc-item"><span class="toc-num">8</span> Third-Party Services</a>
-    <a href="#p9"  class="toc-item"><span class="toc-num">9</span> Data We Do Not Collect</a>
-    <a href="#p10" class="toc-item"><span class="toc-num">10</span> Data Retention and Deletion</a>
-    <a href="#p11" class="toc-item"><span class="toc-num">11</span> Children's Privacy</a>
-    <a href="#p12" class="toc-item"><span class="toc-num">12</span> Changes to This Policy</a>
-    <a href="#p13" class="toc-item"><span class="toc-num">13</span> Contact Us</a>
+    <a href="#p7"  class="toc-item"><span class="toc-num">7</span> Importing from iPhone Contacts</a>
+    <a href="#p8"  class="toc-item"><span class="toc-num">8</span> Subscriptions and Payments</a>
+    <a href="#p9"  class="toc-item"><span class="toc-num">9</span> Notifications</a>
+    <a href="#p10" class="toc-item"><span class="toc-num">10</span> Why We Process Your Data (Legal Bases)</a>
+    <a href="#p11" class="toc-item"><span class="toc-num">11</span> Service Providers</a>
+    <a href="#p12" class="toc-item"><span class="toc-num">12</span> International Transfers</a>
+    <a href="#p13" class="toc-item"><span class="toc-num">13</span> How Long We Keep Data</a>
+    <a href="#p14" class="toc-item"><span class="toc-num">14</span> Deleting Your Data</a>
+    <a href="#p15" class="toc-item"><span class="toc-num">15</span> Your Rights</a>
+    <a href="#p16" class="toc-item"><span class="toc-num">16</span> Children's Privacy</a>
+    <a href="#p17" class="toc-item"><span class="toc-num">17</span> Contact Us</a>
+    <a href="#p18" class="toc-item"><span class="toc-num">18</span> Changes to This Policy</a>
   </div>
 
   <div class="legal">
 
     <!-- 1 -->
     <h2 id="p1">1. Who We Are</h2>
-    <p>Remind AI is a personal productivity application for iOS. This Privacy Policy explains what information we handle when you use the app, how it is used, and your rights regarding that information. By using the Service, you agree to this policy.</p>
+    <p>Remind AI is a personal productivity app for iOS, operated by <strong>BLUE SIRIUS PARTICIPAÇÕES LTDA</strong>, a company registered in Brazil ("we", "us", "our"). We are the controller of the personal data described in this policy.</p>
+    <p>This policy explains what information the app handles, why, who else receives it, how long it is kept, and the rights you have over it. By using the app, you acknowledge that you have read this policy.</p>
 
     <!-- 2 -->
-    <h2 id="p2">2. What Data We Collect</h2>
-    <p>We collect the minimum amount of data necessary to operate the Service. Here is a plain-language breakdown:</p>
-
-    <div class="data-card">
-      <div class="data-icon">💬</div>
-      <div>
-        <div class="data-card-title">Chat input text</div>
-        <div class="data-card-desc">When you type or speak a reminder in the Chat tab, the text you submit is sent to our AI processing proxy (Cloudflare Worker) and then to Anthropic's API to be parsed into a structured reminder. This text is transmitted over an encrypted connection. It is not stored by us after processing.</div>
-      </div>
-    </div>
-
-    <div class="data-card">
-      <div class="data-icon">📊</div>
-      <div>
-        <div class="data-card-title">Anonymous usage metrics</div>
-        <div class="data-card-desc">We may collect basic, anonymized usage signals — such as how many AI parse requests were made per device — solely for rate limiting and abuse prevention. This data cannot be linked back to you personally.</div>
-      </div>
-    </div>
-
-    <div class="data-card">
-      <div class="data-icon">🛒</div>
-      <div>
-        <div class="data-card-title">Subscription status</div>
-        <div class="data-card-desc">The Apple App Store handles all billing. We receive a receipt confirmation indicating whether your subscription is active, which plan you are on, and when it renews. We do not receive your payment details, Apple ID, or name from Apple.</div>
-      </div>
+    <h2 id="p2">2. Summary</h2>
+    <div class="highlight-box">
+      <ul>
+        <li>Your reminders, people and notes are stored in <strong>your own iCloud account</strong>. We cannot see them.</li>
+        <li>When you use the <strong>Chat</strong> tab, what you type or say is sent to <strong>Anthropic</strong> (the company behind Claude) to be turned into a reminder. So are the <strong>first names of the people</strong> in your People list, so the AI can recognise who you mean.</li>
+        <li>We keep a <strong>pseudonymous device identifier</strong> to protect the AI service from abuse. It is not linked to your name, email or Apple ID.</li>
+        <li><strong>Apple</strong> handles payments. <strong>RevenueCat</strong> helps us manage subscriptions.</li>
+        <li>We do not sell your data, show ads, or build advertising profiles.</li>
+      </ul>
     </div>
 
     <!-- 3 -->
-    <h2 id="p3">3. How We Use Your Data</h2>
-    <p>The data described above is used only for the following purposes:</p>
+    <h2 id="p3">3. Information Stored in Your iCloud</h2>
+    <p>Your reminders, the people you add, and your private notes are stored in your personal iCloud account using Apple's <strong>CloudKit private database</strong>.</p>
     <ul>
-      <li><strong>AI parsing</strong> — to convert your natural language input into a structured reminder;</li>
-      <li><strong>Rate limiting</strong> — to enforce fair usage limits per subscription tier and prevent abuse of the AI endpoint;</li>
-      <li><strong>Subscription enforcement</strong> — to determine which features and limits apply to your account.</li>
+      <li>This data sits on Apple's infrastructure, not on any server we operate.</li>
+      <li>We have no access to it and cannot read, restore or back it up.</li>
+      <li>It syncs across your Apple devices signed into the same iCloud account.</li>
+      <li>It is protected by Apple's iCloud security and counts against your own iCloud storage.</li>
     </ul>
-    <p>We do not use your data for advertising, profiling, or any purpose beyond operating the Service.</p>
+    <p>Apple's push notification service may send silent background signals to your device to keep this data in sync. These signals carry no reminder content.</p>
 
     <!-- 4 -->
-    <h2 id="p4">4. iCloud and CloudKit Storage</h2>
-    <p>All of your reminders, contacts, and private notes are stored exclusively in your personal iCloud account using Apple's <strong>CloudKit private database</strong>. This means:</p>
+    <h2 id="p4">4. Information Sent When You Use the Chat</h2>
+    <p>When you submit a message in the Chat tab, the app sends the following to our server proxy (hosted on Cloudflare), which forwards it to <strong>Anthropic's Claude API</strong> to be parsed into a reminder:</p>
     <ul>
-      <li>Your data is stored on Apple's iCloud infrastructure, not on any server we operate;</li>
-      <li>We have <strong>no access</strong> to your reminders, contacts, or private notes — ever;</li>
-      <li>Your data is protected by Apple's iCloud encryption and your device's security;</li>
-      <li>Your data syncs across your Apple devices automatically if you have iCloud enabled;</li>
-      <li>If you delete the app or sign out of iCloud, your data follows your iCloud account — not the app.</li>
+      <li><strong>The text you typed</strong>, or the transcript of what you said (see <a href="#p6">section 6</a>).</li>
+      <li><strong>The first names of the people in your People list</strong> (up to 200). The AI uses these to work out who a reminder is about, for example to link "call Ana" to the right person. Last names, relationship labels and notes are not sent.</li>
+      <li><strong>The full name of any person you @-mention</strong> in that message.</li>
+      <li><strong>Your device's current local date, time and time zone</strong>, so that phrases like "tomorrow at 7pm" resolve correctly.</li>
+      <li>A <strong>technical flag</strong> set when the text looks like an attempt to manipulate the AI, used to apply stricter processing.</li>
     </ul>
-    <p>Because your data is stored in your iCloud account, we cannot recover it if it is deleted. We have no access to it and no backup of it.</p>
+    <p>The parsed reminder is returned to your device and saved in your iCloud.</p>
+    <p><strong>What we do with it:</strong> Our proxy does not store the content of your messages or the names sent with them, and does not write them to our logs. They pass through our proxy only in transit.</p>
+    <p><strong>What Anthropic does with it:</strong> Anthropic processes this data to return the parsed reminder, under its commercial terms and privacy policy: <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">https://www.anthropic.com/legal/privacy</a>. We encourage you to review it.</p>
+    <p>Please avoid entering highly sensitive information in the Chat, such as passwords, bank or card numbers, or medical details.</p>
 
     <!-- 5 -->
-    <h2 id="p5">5. AI Processing</h2>
-    <p>When you submit a reminder through the Chat tab, the text of your input is sent through a secure Cloudflare Worker proxy to <strong>Anthropic's Claude Haiku API</strong> for natural language parsing. The following applies:</p>
+    <h2 id="p5">5. Device Authentication and Abuse Prevention</h2>
+    <p>To stop unauthorised use of our AI service, the app uses Apple's <strong>App Attest</strong>. On first use, your device creates a cryptographic key in its secure hardware (the Secure Enclave); the private part of this key never leaves your device. Our server then stores:</p>
     <ul>
-      <li>Only the text of your reminder input is transmitted — no other personal data is included in the request;</li>
-      <li>Requests are authenticated using App Attest and a short-lived JWT token to prevent unauthorized access;</li>
-      <li>We do not store the content of your chat inputs on any server after processing;</li>
-      <li>Anthropic may process and store request data in accordance with their own <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>. We encourage you to review it.</li>
+      <li>a <strong>device key identifier</strong> and the matching <strong>public key</strong>;</li>
+      <li><strong>Apple's attestation receipt</strong>, which confirms that the request comes from a genuine copy of our app on a genuine Apple device;</li>
+      <li>a <strong>request counter</strong>, used to reject replayed requests; and</li>
+      <li>a <strong>daily usage counter</strong>, used to enforce per-device usage limits.</li>
     </ul>
-    <p>Avoid entering highly sensitive personal information (e.g., passwords, financial account numbers, medical diagnoses) through the chat interface.</p>
+    <p>These records form a <strong>pseudonymous device identifier</strong>. They are not linked to your name, email address or Apple ID, and we do not try to identify you from them.</p>
+    <p>Your device also stores a short-lived access token (valid for 24 hours) in its secure Keychain. It never leaves the device except to authenticate requests to our proxy.</p>
+    <p><strong>Network data:</strong> Like any internet service, our hosting provider <strong>Cloudflare</strong> processes your device's <strong>IP address</strong> and technical request information (such as time and response status) in order to deliver and secure the service. Our own error logs record technical error information only, never the content of your messages.</p>
 
     <!-- 6 -->
     <h2 id="p6">6. Voice Input</h2>
-    <p>Voice transcription in the Chat tab is performed entirely <strong>on your device</strong> using Apple's on-device speech recognition framework (AVFoundation / Speech framework). No audio is ever recorded, transmitted, or processed by us or any third party. The transcript appears in the text input field, where you can review it before submitting.</p>
+    <p>Voice input is transcribed <strong>entirely on your device</strong> using Apple's on-device speech recognition. Your audio is never recorded, stored or sent to us or to any third party, including Apple. The resulting text appears in the input field for you to review, and is handled as described in <a href="#p4">section 4</a> only once you submit it.</p>
 
     <!-- 7 -->
-    <h2 id="p7">7. Notifications</h2>
-    <p>Remind AI uses iOS push notifications to deliver your scheduled reminders. Notification scheduling and delivery are handled by iOS on your device. We do not use a push notification server — reminders are scheduled locally on your device and fire without any server involvement.</p>
+    <h2 id="p7">7. Importing from iPhone Contacts</h2>
+    <p>If you choose to import people from your iPhone Contacts, the app reads the names in your address book to show you the list. <strong>Only the first and last names of the contacts you select</strong> are saved, and they are saved in your iCloud (<a href="#p3">section 3</a>). Phone numbers, email addresses, photos, addresses and other contact details are never read or stored.</p>
+    <p>Imported names then become part of your People list, so their first names are included in Chat requests as described in <a href="#p4">section 4</a>.</p>
 
     <!-- 8 -->
-    <h2 id="p8">8. Third-Party Services</h2>
-    <p>The following third-party services are involved in the operation of Remind AI:</p>
-    <ul>
-      <li><strong>Apple iCloud / CloudKit</strong> — data storage. Governed by Apple's <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Privacy Policy</a>.</li>
-      <li><strong>Apple App Store</strong> — subscription billing. Governed by Apple's terms.</li>
-      <li><strong>Anthropic (Claude Haiku)</strong> — AI parsing of chat input. Governed by Anthropic's <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.</li>
-      <li><strong>Cloudflare Workers</strong> — secure proxy for AI requests. Governed by Cloudflare's <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Privacy Policy</a>.</li>
-    </ul>
+    <h2 id="p8">8. Subscriptions and Payments</h2>
+    <p>Subscriptions are sold and billed by <strong>Apple</strong> through the App Store. We never receive your payment card details, your name or your Apple ID from Apple.</p>
+    <p>We use <strong>RevenueCat</strong> to validate purchases and manage subscription status. RevenueCat receives your <strong>purchase and subscription history</strong>, an <strong>anonymous identifier</strong> it assigns to your installation of the app, and basic <strong>technical information</strong> such as app version, device type, operating system and country. It uses this to tell the app which plan you are on. RevenueCat's privacy policy: <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">https://www.revenuecat.com/privacy</a>.</p>
 
     <!-- 9 -->
-    <h2 id="p9">9. Data We Do Not Collect</h2>
-    <p>To be explicit, Remind AI does <strong>not</strong> collect or have access to:</p>
-    <ul>
-      <li>Your name, email address, or Apple ID;</li>
-      <li>Your phone number or any contact information;</li>
-      <li>The content of your reminders, contacts, or private notes (these stay in your iCloud);</li>
-      <li>Your location;</li>
-      <li>Your device's camera or microphone recordings (audio never leaves your device);</li>
-      <li>Your browsing history or activity outside the app;</li>
-      <li>Any data from your iPhone Contacts (if you import contacts, only names are stored in your iCloud — no phone numbers or email addresses are accessed or stored by us).</li>
-    </ul>
+    <h2 id="p9">9. Notifications</h2>
+    <p>Reminder notifications are scheduled <strong>locally on your device</strong> by iOS. We do not run a server that sends you reminder notifications, and the content of your reminders is never sent to one.</p>
 
     <!-- 10 -->
-    <h2 id="p10">10. Data Retention and Deletion</h2>
-    <p>Because your personal data lives in your own iCloud account, <strong>you are in full control of it</strong>:</p>
+    <h2 id="p10">10. Why We Process Your Data (Legal Bases)</h2>
+    <p>Under Brazil's General Data Protection Law (LGPD), and equivalent laws where they apply, we rely on:</p>
     <ul>
-      <li><strong>To delete your data:</strong> Delete the app from your device. All data stored in the app's CloudKit private container will be deleted from your iCloud.</li>
-      <li><strong>Rate-limiting data:</strong> Anonymous per-device request counters stored in our Cloudflare KV store are automatically expired after a short rolling window.</li>
-      <li><strong>Subscription data:</strong> Receipt confirmations are used only to validate your current subscription status and are not retained beyond what is necessary for this purpose.</li>
+      <li><strong>Performance of our contract with you</strong>, to parse your Chat messages into reminders and to provide the subscription you purchased; and</li>
+      <li><strong>Our legitimate interest</strong> in keeping the service secure and preventing abuse, for device authentication, rate limiting and network security.</li>
     </ul>
+    <p>We do not use your data for advertising, profiling or any purpose unrelated to running the app.</p>
 
     <!-- 11 -->
-    <h2 id="p11">11. Children's Privacy</h2>
-    <p>The Service is not directed to children under the age of 13. We do not knowingly collect personal information from anyone under 13. If you believe a child under 13 has used the Service, please contact us and we will take appropriate action.</p>
+    <h2 id="p11">11. Service Providers</h2>
+    <p>We share data only with the providers needed to operate the app:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Provider</th><th>Purpose</th><th>Data involved</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Apple</strong> (iCloud, App Store, App Attest, push)</td><td>Storage, billing, device verification, sync</td><td>Your iCloud data; purchase records; attestation</td></tr>
+          <tr><td><strong>Anthropic</strong></td><td>Parsing Chat messages</td><td>Chat input, People first names, @-mentioned name, local time and time zone</td></tr>
+          <tr><td><strong>Cloudflare</strong></td><td>Hosting our proxy; security</td><td>IP address, request metadata, device identifier records</td></tr>
+          <tr><td><strong>RevenueCat</strong></td><td>Subscription management</td><td>Purchase history, anonymous ID, technical info</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>We do not sell or rent your personal data.</p>
 
     <!-- 12 -->
-    <h2 id="p12">12. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last Updated" date at the top of this page. For material changes, we will provide notice through the app or App Store update notes. Your continued use of the Service after any changes constitutes your acceptance of the updated policy.</p>
+    <h2 id="p12">12. International Transfers</h2>
+    <p>Anthropic, Cloudflare and RevenueCat are based in the <strong>United States</strong>, and your data may be processed there or in other countries where these providers operate. Where data leaves Brazil or the European Economic Area, we rely on the safeguards these providers offer, such as standard contractual clauses, as permitted by applicable law.</p>
 
     <!-- 13 -->
-    <h2 id="p13">13. Contact Us</h2>
-    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact us:</p>
-    <p><strong>Email:</strong> <a href="mailto:support@remindai.app">support@remindai.app</a></p>
+    <h2 id="p13">13. How Long We Keep Data</h2>
+    <ul>
+      <li><strong>Chat content:</strong> not stored by us. Anthropic retains it only as described in its own policy.</li>
+      <li><strong>Daily usage counters:</strong> deleted automatically after about 26 hours.</li>
+      <li><strong>Device identifier records</strong> (key identifier, public key, attestation receipt, request counter): kept <strong>until you ask us to delete them</strong>. Reinstalling the app generates a new identifier, and the old records are no longer used.</li>
+      <li><strong>Your iCloud data:</strong> kept in your iCloud account until you delete it (<a href="#p14">section 14</a>).</li>
+      <li><strong>Subscription records:</strong> held by Apple and RevenueCat under their own policies.</li>
+    </ul>
+
+    <!-- 14 -->
+    <h2 id="p14">14. Deleting Your Data</h2>
+    <p><strong>Deleting the app does not delete your data from iCloud.</strong> Your reminders, people and notes stay in your iCloud account so they can return if you reinstall. To remove them:</p>
+    <ul>
+      <li>Delete individual reminders, people and notes inside the app, or</li>
+      <li>On your iPhone, go to <strong>Settings → [your name] → iCloud → Manage Account Storage</strong>, and if Remind AI is listed, select it and delete its data.</li>
+    </ul>
+    <p>To ask us to delete the device identifier records described in <a href="#p5">section 5</a>, email us at the address in <a href="#p17">section 17</a>.</p>
+
+    <!-- 15 -->
+    <h2 id="p15">15. Your Rights</h2>
+    <p>Depending on where you live, including under the LGPD and the GDPR, you may have the right to:</p>
+    <ul>
+      <li>confirm whether we process your personal data, and access it;</li>
+      <li>correct inaccurate data;</li>
+      <li>have your data anonymised, blocked or deleted;</li>
+      <li>receive your data in a portable format;</li>
+      <li>know which third parties we share it with;</li>
+      <li>object to processing based on our legitimate interest; and</li>
+      <li>lodge a complaint with your data protection authority. In Brazil, this is the <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong>.</li>
+    </ul>
+    <p>Because most of your data lives in your own iCloud account, you can access, change and delete it directly in the app. For anything else, contact us (<a href="#p17">section 17</a>). We will respond within the time required by applicable law.</p>
+
+    <!-- 16 -->
+    <h2 id="p16">16. Children's Privacy</h2>
+    <p>The app is not directed to children under 13, and we do not knowingly collect personal data from anyone under 13. If you believe a child under 13 has used the app, please contact us and we will take appropriate action.</p>
+
+    <!-- 17 -->
+    <h2 id="p17">17. Contact Us</h2>
+    <p>For questions about this policy, or to exercise any of your rights:</p>
+    <p><strong>BLUE SIRIUS PARTICIPAÇÕES LTDA</strong><br>
+    Email: <a href="mailto:support@remindai.app"><strong>support@remindai.app</strong></a></p>
+
+    <!-- 18 -->
+    <h2 id="p18">18. Changes to This Policy</h2>
+    <p>We may update this policy from time to time. When we do, we will change the "Last updated" date above. For material changes, we will also notify you in the app or in the App Store release notes. Your continued use of the app after a change means you accept the updated policy.</p>
 
   </div>
 
